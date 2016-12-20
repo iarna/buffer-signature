@@ -8,7 +8,7 @@ http://en.wikipedia.org/wiki/List_of_file_signatures
 This is a fork of [file-signature](https://npmjs.com/package/file-signature)
 by [@leahcimic](https://www.npmjs.com/~leahcimic).
 
-To match against any file format, you'll need a minimum of 30 bytes from the
+To match against any file format, you'll need a minimum of 22 bytes from the
 start of the file.
 
 ## Example use:
