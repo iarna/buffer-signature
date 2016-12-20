@@ -1,14 +1,14 @@
 {
-  "name": "file-signature",
+  "name": "buffer-signature",
   "version": "1.0.0",
-  "description": "Get file information based on file signature",
-  "main": "file-signature.js",
+  "description": "Get the mimetype of a buffer based on its contents",
+  "main": "buffer-signature.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "tap test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leahciMic/file-signature"
+    "url": "https://github.com/iarna/buffer-signature"
   },
   "keywords": [
     "mime",
@@ -20,11 +20,25 @@
     "mimetype"
   ],
   "author": {
-    "name": "Michael Leaney",
-    "email": "leahcimic@gmail.com"
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org"
   },
+  "contributors": [
+    {
+      "name": "Michael Leaney",
+      "email": "leahcimic@gmail.com"
+    }
+  ],
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^2.3.2"
-  }
+    "jasmine": "^2.3.2",
+    "tap": "^8.0.1"
+  },
+  "dependencies": {
+    "readable-stream": "^2.2.2"
+  },
+  "files": [
+    "buffer-signature.js",
+    "signatures.js"
+  ]
 }
