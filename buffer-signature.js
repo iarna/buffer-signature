@@ -31,16 +31,18 @@ exports.identifyStream = function (cb) {
   let finished = false
   let buf = []
   let bufSize = 0
-  return new Transform({transform: function (chunk, _, done) {
-    if (!finished) {
-      buf.push(chunk)
-      bufSize += chunk.length
-      if (bufSize >= 22) {
-        finished = true
-        cb(identify(Buffer.concat(buf, bufSize)))
+  return new Transform({
+    transform (chunk, _, done) {
+      if (!finished) {
+        buf.push(chunk)
+        bufSize += chunk.length
+        if (bufSize >= 0x22) {
+          finished = true
+          cb(identify(Buffer.concat(buf, bufSize)))
+        }
       }
+      this.push(chunk)
+      done()
     }
-    this.push(chunk)
-    done()
-  }})
+  })
 }
