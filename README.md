@@ -5,6 +5,8 @@ Get the mimetype of a buffer based on its contents.
 Data for this script was generated from:
 http://en.wikipedia.org/wiki/List_of_file_signatures
 
+Additional support for mp4 and mov formats from [@cmd430](https://github.com/cmd430)
+
 This is a fork of [file-signature](https://npmjs.com/package/file-signature)
 by [@leahcimic](https://www.npmjs.com/~leahcimic).
 
