@@ -1,6 +1,6 @@
 {
   "name": "buffer-signature",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Get the mimetype of a buffer based on its contents",
   "main": "buffer-signature.js",
   "scripts": {
