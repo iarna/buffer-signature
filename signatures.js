@@ -299,7 +299,7 @@ module.exports = [
     ],
   },
   {
-    extensions: [ 'exe' ],
+    extensions: [ 'exe', 'dll' ],
     description: 'DOS MZ executable file format and its descendants (including NE and PE)',
     mimeType: 'application/x-msdownload',
     signatures: [
@@ -307,7 +307,7 @@ module.exports = [
     ],
   },
   {
-    extensions: [ 'zip', 'jar', 'odt', 'ods', 'odp', 'docx', 'xlsx', 'pptx', 'vsdx', 'apk' ],
+    extensions: [ 'zip', 'jar', 'odt', 'ods', 'odp', 'docx', 'xlsx', 'pptx', 'vsdx', 'apk', 'aar' ],
     description: 'zip file format and formats based on it, such as JAR, ODF, OOXML',
     mimeType: 'application/zip',
     signatures: [
