@@ -1,5 +1,48 @@
 module.exports = [
   {
+    extensions: [ 'pcap' ],
+    description: 'Libpcap File Format&#91;1&#93;',
+    signatures: [
+      [0, Buffer.from([ 0xa1, 0xb2, 0xc3, 0xd4 ])],
+      [0, Buffer.from([ 0xd4, 0xc3, 0xb2, 0xa1 ])]
+    ],
+  },
+  {
+    extensions: [ 'pcapng' ],
+    description: 'PCAP Next Generation Dump File Format&#91;2&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x0a, 0x0d, 0x0d, 0x0a ])]
+    ],
+  },
+  {
+    extensions: [ 'rpm' ],
+    description: 'RedHat Package Manager (RPM) package &#91;3&#93;',
+    signatures: [
+      [0, Buffer.from([ 0xed, 0xab, 0xee, 0xdb ])]
+    ],
+  },
+  {
+    extensions: [ 'sqlitedb', 'sqlite', 'db' ],
+    description: 'SQLite Database &#91;4&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x53, 0x51, 0x4c, 0x69, 0x74, 0x65, 0x20, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x20, 0x33, 0x00 ])]
+    ],
+  },
+  {
+    extensions: [ 'bin' ],
+    description: 'Amazon Kindle Update Package &#91;5&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x53, 0x50, 0x30, 0x31 ])]
+    ],
+  },
+  {
+    extensions: [ 'PDB' ],
+    description: 'PalmPilot Database/Document File',
+    signatures: [
+      [11, Buffer.from([ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 ])]
+    ],
+  },
+  {
     extensions: [ 'DBA' ],
     description: 'Palm Desktop Calendar Archive',
     signatures: [
@@ -18,6 +61,20 @@ module.exports = [
     description: 'Palm Desktop Calendar Archive',
     signatures: [
       [0, Buffer.from([ 0x00, 0x01, 0x44, 0x54 ])]
+    ],
+  },
+  {
+    extensions: [ 'TDF$' ],
+    description: 'Telegram Desktop File',
+    signatures: [
+      [0, Buffer.from([ 0x54, 0x44, 0x46, 0x24 ])]
+    ],
+  },
+  {
+    extensions: [ 'TDEF' ],
+    description: 'Telegram Desktop Encrypted File',
+    signatures: [
+      [0, Buffer.from([ 0x54, 0x44, 0x45, 0x46 ])]
     ],
   },
   {
@@ -314,6 +371,11 @@ module.exports = [
     description: 'Mach-O binary (64-bit)',
     signatures: [
       [0, Buffer.from([ 0xFE, 0xED, 0xFA, 0xCF ])]
+  },
+  {
+    description: 'JKS JavakeyStore',
+    signatures: [
+      [0, Buffer.from([ 0xFE, 0xED, 0xFE, 0xED ])]
     ],
   },
   {
@@ -461,6 +523,15 @@ module.exports = [
     ],
   },
   {
+    extensions: [ 'iso' ],
+    description: 'ISO9660 CD/DVD image file',
+    signatures: [
+      [0x8001, Buffer.from([ 0x43, 0x44, 0x30, 0x30, 0x31 ])],
+      [0x8801, Buffer.from([ 0x43, 0x44, 0x30, 0x30, 0x31 ])],
+      [0x9001, Buffer.from([ 0x43, 0x44, 0x30, 0x30, 0x31 ])]
+    ],
+  },
+  {
     extensions: [ 'fits' ],
     description: 'Flexible Image Transport System (FITS)',
     signatures: [
@@ -573,6 +644,14 @@ module.exports = [
     ],
   },
   {
+    extensions: [ 'tar' ],
+    description: 'tar archive&#91;34&#93;',
+    signatures: [
+      [0x101, Buffer.from([ 0x75, 0x73, 0x74, 0x61, 0x72, 0x00, 0x30, 0x30 ])],
+      [0x101, Buffer.from([ 0x75, 0x73, 0x74, 0x61, 0x72, 0x20, 0x20, 0x00 ])]
+    ],
+  },
+  {
     extensions: [ 'tox' ],
     description: 'Open source portable voxel file',
     signatures: [
@@ -608,6 +687,13 @@ module.exports = [
     ],
   },
   {
+    extensions: [ 'xz', 'tar.xz' ],
+    description: 'XZ compression utility using LZMA2 compression',
+    signatures: [
+      [0, Buffer.from([ 0xFD, 0x37, 0x7A, 0x58, 0x5A, 0x00, 0x00 ])]
+    ],
+  },
+  {
     extensions: [ 'lz4' ],
     description: 'LZ4 Streaming Format',
     signatures: [
@@ -620,6 +706,12 @@ module.exports = [
     mimeType: 'application/vnd.ms-cab-compressed',
     signatures: [
       [0, Buffer.from([ 0x4D, 0x53, 0x43, 0x46 ])]
+    ],
+  },
+  {
+    description: 'Microsoft compressed file in Quantum format, used prior to Windows XP.  File can be decompressed using Extract.exe or Expand.exe distributed with earlier versions of Windows.',
+    signatures: [
+      [0, Buffer.from([ 0x53, 0x5A, 0x44, 0x44, 0x88, 0xF0, 0x27, 0x33 ])]
     ],
   },
   {
@@ -661,6 +753,13 @@ module.exports = [
     ],
   },
   {
+    extensions: [ 'dcm' ],
+    description: 'DICOM Medical File Format',
+    signatures: [
+      [0x80, Buffer.from([ 0x44, 0x49, 0x43, 0x4D ])]
+    ],
+  },
+  {
     extensions: [ 'woff' ],
     description: 'WOFF File Format 1.0',
     mimeType: 'application/font-woff',
@@ -696,6 +795,197 @@ module.exports = [
     description: 'lepton compressed jpeg image',
     signatures: [
       [0, Buffer.from([ 0xcf, 0x84, 0x01 ])]
+    ],
+  },
+  {
+    extensions: [ 'swf' ],
+    description: 'flash .swf',
+    signatures: [
+      [0, Buffer.from([ 0x43, 0x57, 0x53 ])],
+      [0, Buffer.from([ 0x46, 0x57, 0x53 ])]
+    ],
+  },
+  {
+    extensions: [ 'deb' ],
+    description: 'linux deb file',
+    signatures: [
+      [0, Buffer.from([ 0x21, 0x3C, 0x61, 0x72, 0x63, 0x68, 0x3E ])]
+    ],
+  },
+  {
+    extensions: [ 'webp' ],
+    description: 'Google WebP image file',
+    signatures: [
+      [0, Buffer.from([ 0x52, 0x49, 0x46, 0x46 ]), 8, Buffer.from([ 0x57, 0x45, 0x42, 0x50 ])]
+    ],
+  },
+  {
+    description: 'U-Boot / uImage. Das U-Boot Universal Boot Loader.&#91;43&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x27, 0x05, 0x19, 0x56 ])]
+    ],
+  },
+  {
+    extensions: [ 'rtf' ],
+    description: 'Rich Text Format',
+    signatures: [
+      [0, Buffer.from([ 0x7B, 0x5C, 0x72, 0x74, 0x66, 0x31 ])]
+    ],
+  },
+  {
+    description: 'Microsoft Tape Format',
+    signatures: [
+      [0, Buffer.from([ 0x54, 0x41, 0x50, 0x45 ])]
+    ],
+  },
+  {
+    extensions: [ 'ts tsv tsa ' ],
+    description: 'MPEG Transport Stream  (MPEG-2 Part 1)',
+    signatures: [
+      [0, Buffer.from([ 0x47 ]), 0xBC, Buffer.from([ 0x47 ]), 0x178, Buffer.from([ 0x47 ])]
+    ],
+  },
+  {
+    extensions: [ 'm2p vob ' ],
+    description: 'MPEG Program Stream  (MPEG-1 Part 1 (essentially identical) and MPEG-2 Part 1)',
+    signatures: [
+      [0, Buffer.from([ 0x00, 0x00, 0x01, 0xBA ])]
+    ],
+  },
+  {
+    extensions: [ 'mpg mpeg ' ],
+    description: 'MPEG Program Stream\nMPEG Transport Stream\nMPEG-1 video and MPEG-2 video  (MPEG-1 Part 2 and MPEG-2 Part 2)',
+    signatures: [
+      [0, Buffer.from([ 0x00, 0x00, 0x01, 0xBA ])],
+      [0, Buffer.from([ 0x47 ])],
+      [0, Buffer.from([ 0x00, 0x00, 0x01, 0xB3 ])]
+    ],
+  },
+  {
+    extensions: [ 'zlib' ],
+    description: 'No Compression/low\nDefault Compression\nBest Compression',
+    signatures: [
+      [0, Buffer.from([ 0x78, 0x01 ])],
+      [0, Buffer.from([ 0x78, 0x9C ])],
+      [0, Buffer.from([ 0x78, 0xDA ])]
+    ],
+  },
+  {
+    extensions: [ 'lzfse' ],
+    description: 'LZFSE - Lempel-Ziv style data compression algorithm using Finite State Entropy coding. OSS by Apple.&#91;44&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x62, 0x76, 0x78, 0x32 ])]
+    ],
+  },
+  {
+    extensions: [ 'orc' ],
+    description: 'Apache ORC (Optimized Row Columnar) file format',
+    signatures: [
+      [0, Buffer.from([ 0x4F, 0x52, 0x43 ])]
+    ],
+  },
+  {
+    extensions: [ 'avro' ],
+    description: 'Apache Avro binary file format',
+    signatures: [
+      [0, Buffer.from([ 0x4F, 0x62, 0x6A, 0x01 ])]
+    ],
+  },
+  {
+    extensions: [ 'rc' ],
+    description: 'RCFile columnar file format',
+    signatures: [
+      [0, Buffer.from([ 0x53, 0x45, 0x51, 0x36 ])]
+    ],
+  },
+  {
+    extensions: [ 'p25 obt ' ],
+    description: 'PhotoCap Object Templates',
+    signatures: [
+      [0, Buffer.from([ 0x65, 0x87, 0x78, 0x56 ])]
+    ],
+  },
+  {
+    extensions: [ 'pcv' ],
+    description: 'PhotoCap Vector',
+    signatures: [
+      [0, Buffer.from([ 0x55, 0x55, 0xaa, 0xaa ])]
+    ],
+  },
+  {
+    extensions: [ 'pbt pdt pea peb pet pgt pict pjt pkt pmt ' ],
+    description: 'PhotoCap Template',
+    signatures: [
+      [0, Buffer.from([ 0x78, 0x56, 0x34 ])]
+    ],
+  },
+  {
+    description: 'Apache Parquet columnar file format',
+    signatures: [
+      [0, Buffer.from([ 0x50, 0x41, 0x52, 0x31 ])]
+    ],
+  },
+  {
+    extensions: [ 'ez2' ],
+    description: 'Emulator Emaxsynth samples',
+    signatures: [
+      [0, Buffer.from([ 0x45, 0x4D, 0x58, 0x32 ])]
+    ],
+  },
+  {
+    extensions: [ 'ez3 iso ' ],
+    description: 'Emulator III synth samples',
+    signatures: [
+      [0, Buffer.from([ 0x45, 0x4D, 0x55, 0x33 ])]
+    ],
+  },
+  {
+    extensions: [ 'luac' ],
+    description: 'Lua bytecode&#91;45&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x1B, 0x4C, 0x75, 0x61 ])]
+    ],
+  },
+  {
+    extensions: [ 'alias' ],
+    description: 'macOS file Alias&#91;46&#93; (Symbolic link)',
+    signatures: [
+      [0, Buffer.from([ 0x62, 0x6F, 0x6F, 0x6B, 0x00, 0x00, 0x00, 0x00, 0x6D, 0x61, 0x72, 0x6B, 0x00, 0x00, 0x00, 0x00 ])]
+    ],
+  },
+  {
+    extensions: [ 'Identifier' ],
+    description: 'Microsoft Zone Identifier for URL Security Zones&#91;47&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x5B, 0x5A, 0x6F, 0x6E, 0x65, 0x54, 0x72, 0x61, 0x6E, 0x73, 0x66, 0x65, 0x72, 0x5D ])]
+    ],
+  },
+  {
+    extensions: [ 'eml' ],
+    description: 'Email Message var5&#91;48&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x52, 0x65, 0x63, 0x65, 0x69, 0x76, 0x65, 0x64 ])]
+    ],
+  },
+  {
+    extensions: [ 'tde' ],
+    description: 'Tableau Datasource',
+    signatures: [
+      [0, Buffer.from([ 0x20, 0x02, 0x01, 0x62, 0xA0, 0x1E, 0xAB, 0x07, 0x02, 0x00, 0x00, 0x00 ])]
+    ],
+  },
+  {
+    extensions: [ 'kdb' ],
+    description: 'KDB file',
+    signatures: [
+      [0, Buffer.from([ 0x37, 0x48, 0x03, 0x02, 0x00, 0x00, 0x00, 0x00, 0x58, 0x35, 0x30, 0x39, 0x4B, 0x45, 0x59 ])]
+    ],
+  },
+  {
+    extensions: [ 'zst' ],
+    description: 'Zstandard compressed file&#91;49&#93;&#91;50&#93;',
+    signatures: [
+      [0, Buffer.from([ 0x28, 0xB5, 0x2F, 0xFD ])]
     ],
   }
 ]
