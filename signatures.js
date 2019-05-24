@@ -1,7 +1,7 @@
 module.exports = [
   {
     extensions: [ 'pcap' ],
-    description: 'Libpcap File Format&#91;1&#93;',
+    description: 'Libpcap File Format',
     signatures: [
       [0, Buffer.from([ 0xa1, 0xb2, 0xc3, 0xd4 ])],
       [0, Buffer.from([ 0xd4, 0xc3, 0xb2, 0xa1 ])]
@@ -9,28 +9,28 @@ module.exports = [
   },
   {
     extensions: [ 'pcapng' ],
-    description: 'PCAP Next Generation Dump File Format&#91;2&#93;',
+    description: 'PCAP Next Generation Dump File Format',
     signatures: [
       [0, Buffer.from([ 0x0a, 0x0d, 0x0d, 0x0a ])]
     ],
   },
   {
     extensions: [ 'rpm' ],
-    description: 'RedHat Package Manager (RPM) package &#91;3&#93;',
+    description: 'RedHat Package Manager (RPM) package ',
     signatures: [
       [0, Buffer.from([ 0xed, 0xab, 0xee, 0xdb ])]
     ],
   },
   {
     extensions: [ 'sqlitedb', 'sqlite', 'db' ],
-    description: 'SQLite Database &#91;4&#93;',
+    description: 'SQLite Database ',
     signatures: [
       [0, Buffer.from([ 0x53, 0x51, 0x4c, 0x69, 0x74, 0x65, 0x20, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x20, 0x33, 0x00 ])]
     ],
   },
   {
     extensions: [ 'bin' ],
-    description: 'Amazon Kindle Update Package &#91;5&#93;',
+    description: 'Amazon Kindle Update Package ',
     signatures: [
       [0, Buffer.from([ 0x53, 0x50, 0x30, 0x31 ])]
     ],
@@ -561,7 +561,7 @@ module.exports = [
   },
   {
     extensions: [ 'doc', 'xls', 'ppt', 'msg' ],
-    description: 'Compound File Binary Format, a container format used for document by older versions of Microsoft Office.[15] It is however an open format used by other programs as well.',
+    description: 'Compound File Binary Format, a container format used for document by older versions of Microsoft Office. It is however an open format used by other programs as well.',
     signatures: [
       [0, Buffer.from([ 0xD0, 0xCF, 0x11, 0xE0, 0xA1, 0xB1, 0x1A, 0xE1 ])]
     ],
@@ -649,7 +649,7 @@ module.exports = [
   },
   {
     extensions: [ 'tar' ],
-    description: 'tar archive&#91;34&#93;',
+    description: 'tar archive',
     signatures: [
       [0x101, Buffer.from([ 0x75, 0x73, 0x74, 0x61, 0x72, 0x00, 0x30, 0x30 ])],
       [0x101, Buffer.from([ 0x75, 0x73, 0x74, 0x61, 0x72, 0x20, 0x20, 0x00 ])]
@@ -824,7 +824,7 @@ module.exports = [
     ],
   },
   {
-    description: 'U-Boot / uImage. Das U-Boot Universal Boot Loader.&#91;43&#93;',
+    description: 'U-Boot / uImage. Das U-Boot Universal Boot Loader.',
     signatures: [
       [0, Buffer.from([ 0x27, 0x05, 0x19, 0x56 ])]
     ],
@@ -876,7 +876,7 @@ module.exports = [
   },
   {
     extensions: [ 'lzfse' ],
-    description: 'LZFSE - Lempel-Ziv style data compression algorithm using Finite State Entropy coding. OSS by Apple.&#91;44&#93;',
+    description: 'LZFSE - Lempel-Ziv style data compression algorithm using Finite State Entropy coding. OSS by Apple.',
     signatures: [
       [0, Buffer.from([ 0x62, 0x76, 0x78, 0x32 ])]
     ],
@@ -945,28 +945,28 @@ module.exports = [
   },
   {
     extensions: [ 'luac' ],
-    description: 'Lua bytecode&#91;45&#93;',
+    description: 'Lua bytecode',
     signatures: [
       [0, Buffer.from([ 0x1B, 0x4C, 0x75, 0x61 ])]
     ],
   },
   {
     extensions: [ 'alias' ],
-    description: 'macOS file Alias&#91;46&#93; (Symbolic link)',
+    description: 'macOS file Alias (Symbolic link)',
     signatures: [
       [0, Buffer.from([ 0x62, 0x6F, 0x6F, 0x6B, 0x00, 0x00, 0x00, 0x00, 0x6D, 0x61, 0x72, 0x6B, 0x00, 0x00, 0x00, 0x00 ])]
     ],
   },
   {
     extensions: [ 'Identifier' ],
-    description: 'Microsoft Zone Identifier for URL Security Zones&#91;47&#93;',
+    description: 'Microsoft Zone Identifier for URL Security Zones',
     signatures: [
       [0, Buffer.from([ 0x5B, 0x5A, 0x6F, 0x6E, 0x65, 0x54, 0x72, 0x61, 0x6E, 0x73, 0x66, 0x65, 0x72, 0x5D ])]
     ],
   },
   {
     extensions: [ 'eml' ],
-    description: 'Email Message var5&#91;48&#93;',
+    description: 'Email Message var5',
     signatures: [
       [0, Buffer.from([ 0x52, 0x65, 0x63, 0x65, 0x69, 0x76, 0x65, 0x64 ])]
     ],
@@ -987,7 +987,7 @@ module.exports = [
   },
   {
     extensions: [ 'zst' ],
-    description: 'Zstandard compressed file&#91;49&#93;&#91;50&#93;',
+    description: 'Zstandard compressed file',
     signatures: [
       [0, Buffer.from([ 0x28, 0xB5, 0x2F, 0xFD ])]
     ],
