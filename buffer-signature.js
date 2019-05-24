@@ -36,12 +36,21 @@ exports.identifyStream = function (cb) {
       if (!finished) {
         buf.push(chunk)
         bufSize += chunk.length
-        if (bufSize >= 0x22) {
-          finished = true
-          cb(identify(Buffer.concat(buf, bufSize)))
+        if (bufSize >= 35) {
+          const type = identify(Buffer.concat(buf, bufSize))
+          if (!type.unknown || bufSize >= 36870) {
+            buf.length = 0
+            bufSize = 0
+            finished = true
+            cb(type)
+          }
         }
       }
       this.push(chunk)
+      done()
+    },
+    flush (done) {
+      if (!finished) cb(identify(Buffer.concat(buf, bufSize)))
       done()
     }
   })

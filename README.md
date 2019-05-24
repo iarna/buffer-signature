@@ -10,8 +10,20 @@ Additional support for mp4 and mov formats from [@cmd430](https://github.com/cmd
 This is a fork of [file-signature](https://npmjs.com/package/file-signature)
 by [@leahcimic](https://www.npmjs.com/~leahcimic).
 
-To match against any file format, you'll need a minimum of 22 bytes from the
-start of the file.
+Most file formats only require a few bytes at the start to recognize them:
+
+| File type | Bytes Required |
+| --------- | -------------- |
+| *everything else* | <= 22 |
+| PalmPilot Database/Document (.PDB) | 35 |
+| DICOM Medical File (.dcm) | 132 |
+| tar archive (.tar) | 265 |
+| MPEG-2 Part 1 (.ts, .tsv, .tsa) | 377 |
+| Mach-O binary | 4100 |
+| ISO9660 CD/DVD image (.iso) | 36870 |
+
+Note that with the streaming interface you don't have to worry about this
+(regardless of blocksize).
 
 ## Example use:
 ```js
