@@ -1,6 +1,6 @@
 'use strict'
 const filetypes = require('./signatures.js')
-const Transform = require('readable-stream').Transform
+const Transform = require('stream').Transform
 
 const identify = exports.identify = function (buf) {
   for (let ft of filetypes) {

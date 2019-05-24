@@ -33,9 +33,7 @@
   "devDependencies": {
     "tap": "^8.0.1"
   },
-  "dependencies": {
-    "readable-stream": "^2.2.2"
-  },
+  "dependencies": {},
   "files": [
     "buffer-signature.js",
     "signatures.js"
